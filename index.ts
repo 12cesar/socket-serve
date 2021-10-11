@@ -1,7 +1,7 @@
 import Server from './classes/server';
 
 
-const server = new Server();
+const server = Server.instance;
 
  server.start(()=>{
     console.log(`Servidor corriendo en el puerto ${server.port}` );
