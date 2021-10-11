@@ -44,13 +44,15 @@ export default class Server {
             //mostrar el id
             //console.log(cliente.id);
             //Conectar cliente
-            socket.conectarCliente(cliente);
+            socket.conectarCliente(cliente, this.io);
             //Configurar usaurio
             socket.configurarUsuario(cliente, this.io)
+            // obtener usuarios activos
+            socket.obtenerUsuarios(cliente, this.io)
             //mensajes
             socket.mensaje(cliente, this.io);
             // Desconectar
-            socket.desconectar(cliente);
+            socket.desconectar(cliente, this.io);
             
         });
     }
